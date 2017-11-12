@@ -1,5 +1,5 @@
 {
-    "name": "svi/system",
+    "name": "svi/base",
     "description": "Main svi framework files",
     "license": "MIT",
     "require": {
