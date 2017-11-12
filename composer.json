@@ -1,0 +1,14 @@
+{
+    "name": "svi/system",
+    "description": "Main svi framework files",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.0",
+        "twig/twig": ">=2.4"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Svi\\" : ""
+        }
+    }
+}
