@@ -13,6 +13,9 @@ class ArrayAccess implements \ArrayAccess, \Iterator
 
     public function offsetGet($offset)
     {
+        if (!$this->offsetExists($offset)) {
+            throw new \Exception('Offset does not exist: ' . $offset);
+        }
         $result = $this->values[$offset];
 
         if (is_callable($result)) {

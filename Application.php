@@ -7,7 +7,6 @@ use Svi\Service\ConfigService;
 use Svi\Service\ConsoleService;
 use Svi\Service\ExceptionService;
 use Svi\Service\LoggerService;
-use Svi\Service\TemplateService;
 use Svi\Service\TranslationService;
 
 class Application extends ArrayAccess
@@ -31,10 +30,6 @@ class Application extends ArrayAccess
         $this[LoggerService::class] = new LoggerService($this);
 
         $this[ExceptionService::class] = new ExceptionService($this);
-
-        $this[TemplateService::class] = function () {
-            return new TemplateService($this);
-        };
 
         $this[TranslationService::class] = function(){
             return new TranslationService($this);
@@ -94,14 +89,6 @@ class Application extends ArrayAccess
     public function getRootDir()
     {
         return $this->rootDir;
-    }
-
-    /**
-     * @return TemplateService
-     */
-    public function getTemplateService()
-    {
-        return $this[TemplateService::class];
     }
 
     public function isConsole()
